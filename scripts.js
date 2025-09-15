@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       function drawQuiverPlot() {
-        const density = parseInt(quiverDensitySlider.value);
+        const density = 50 - parseInt(quiverDensitySlider.value);
         const scale = parseInt(quiverScaleSlider.value);
         const scaleX = canvas.width / simWidth;
         const scaleY = canvas.height / simHeight;
