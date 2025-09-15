@@ -459,8 +459,8 @@ document.addEventListener('DOMContentLoaded', () => {
           if (inletVelocitySlider.value > max) inletVelocitySlider.value = max;
           velocityValueSpan.textContent = parseFloat(inletVelocitySlider.value).toFixed(2);
         }
-        minVelocityInput.addEventListener('change', updateVelocityBounds);
-        maxVelocityInput.addEventListener('change', updateVelocityBounds);
+        // minVelocityInput.addEventListener('change', updateVelocityBounds);
+        // maxVelocityInput.addEventListener('change', updateVelocityBounds);
         
         // Visualization listeners
         const vizControls = [showQuiversCheckbox, quiverDensitySlider, quiverScaleSlider, showPressureCheckbox];
