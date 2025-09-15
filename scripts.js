@@ -1,3 +1,4 @@
+console.log("The scripts.js file has been loaded successfully! ✅");
 document.addEventListener('DOMContentLoaded', () => {
       // --- Canvas and Drawing Setup ---
       const canvas = document.getElementById('drawing-canvas');
