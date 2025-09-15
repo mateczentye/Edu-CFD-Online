@@ -30,9 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Visualization
       const showQuiversCheckbox = document.getElementById('show-quivers');
+      showQuiversCheckbox.disabled = true
       const quiverDensitySlider = document.getElementById('quiver-density');
       const quiverScaleSlider = document.getElementById('quiver-scale');
       const showPressureCheckbox = document.getElementById('show-pressure');
+      showPressureCheckbox.disabled = true
 
       let simRunning = false;
       let animationFrameId;
@@ -487,6 +489,8 @@ document.addEventListener('DOMContentLoaded', () => {
           updateBoundariesFromCanvas(); // Re-apply drawing to the new grid
 
           simRunning = true;
+          showQuiversCheckbox.disabled = false
+          showPressureCheckbox.disabled = false
           simStatus.textContent = "Status: Running...";
           simStatus.classList.replace('text-gray-600', 'text-green-600');
           document.querySelectorAll('.tool-btn, #lineWidth, #grid-size').forEach(el => el.disabled = true);
@@ -496,6 +500,8 @@ document.addEventListener('DOMContentLoaded', () => {
         stopSimBtn.addEventListener('click', () => {
           if (!simRunning) return;
           simRunning = false;
+          showQuiversCheckbox.disabled = true
+          showPressureCheckbox.disabled = true
           simStatus.textContent = "Status: Stopped";
           simStatus.classList.replace('text-green-600', 'text-gray-600');
           cancelAnimationFrame(animationFrameId);
